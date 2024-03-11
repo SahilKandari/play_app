@@ -1,0 +1,38 @@
+.container {
+  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 72px);
+  border-right: 2px solid #D0D5DD;
+  position: absolute;
+  transition-duration: 200ms;
+}
+
+.container_open {
+  width: 280px;
+}
+
+.container_close {
+  width: 80px;
+}
+
+.upperdeck {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lowerdeck {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttonText {
+  padding-top: 2px;
+}
+
+.buttonHide {
+  display: none;
+}

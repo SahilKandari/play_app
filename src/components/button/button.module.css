@@ -1,0 +1,22 @@
+.button {
+  background-color: #AE7AFF;
+  padding: 13px 19px;
+  color: black;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(2px); /* Move the button down slightly when hovered over */
+  box-shadow: none; /* Remove the box-shadow when hovered over */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shadow {
+  box-shadow: rgba(174,122,255, 0.4) 5px 5px;
+}
+
+
+.icon {
+  
+}
