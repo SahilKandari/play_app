@@ -1,0 +1,16 @@
+.container {
+  padding: 1rem;
+  transition-duration: 200ms;
+  display: flex;
+  gap: 1rem;
+  height: calc(100vh - 72px);
+  overflow-y: auto;
+}
+
+.container_open {
+  margin-left: 280px;
+}
+
+.container_close {
+  margin-left: 80px;
+}

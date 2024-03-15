@@ -1,10 +1,16 @@
 import React from 'react'
 import styles from './videoCard.module.css'
 import Image from 'next/image'
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
 
-const VideoCard = ({ videoDetails }) => {
+const VideoCard = ({ videoDetails }, ) => {
+  const router = useRouter();
+  const getVideo = () => {
+    router.push('/video/'+ videoDetails.key)
+  }
   return (
-    <div className={styles.card}>
+    <div onClick={getVideo} className={styles.card}>
       <Image className={styles.thumb} src={videoDetails.thumb} alt="" width={270} height={133}/>
       <div className={styles.card_content}>
         <div className={styles.header}>

@@ -4,6 +4,9 @@
   color: black;
   font-weight: 600;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .button:hover {

@@ -1,13 +1,11 @@
 "use client"
 import styles from "./page.module.css";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import VideoCard from "@/components/videoCard/VideoCard";
 import Navbar from "@/components/navbar/Navbar";
 import Sidenav from "@/components/sidenav/Sidenav";
-import { jwtDecode } from 'jwt-decode';
-import Cookies from 'js-cookie';
 import { useEffect, useState } from "react";
-import { authState, sideNavState } from "@/components/state/atoms/State";
+import { sideNavState } from "@/components/state/atoms/State";
 import axios from "axios";
 
 export const timeDifference = (providedTimestamp) => {
@@ -34,23 +32,9 @@ export const timeDifference = (providedTimestamp) => {
 
 export default function Home() {
   const isOpen = useRecoilValue(sideNavState);
-  const [isAuth, setIsAuth] = useRecoilState(authState);
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    const token = Cookies.get('accessToken');
-    if (token) {
-      const decodedToken = jwtDecode(token);
-      const currentTime = Date.now() / 1000;
-
-      if (decodedToken.exp < currentTime) 
-        setIsAuth(false);
-      else 
-        setIsAuth(true);
-    } else {
-      setIsAuth(false);
-    }
-
     axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/videos/`, {
       withCredentials: true
     })
@@ -76,6 +60,7 @@ export default function Home() {
             views: video?.views,
             time: timeDifference(video?.createdAt),
             user_title: video?.owner.username,
+            key: video?._id
           }}/>
         ))
       }

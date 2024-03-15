@@ -11,7 +11,6 @@ import { timeDifference } from '../page'
 const Searched = () => {
   const isOpen = useRecoilValue(sideNavState);
   const videos = useRecoilValue(searchedVideos);
-  console.log(videos);
   return (
     <>
       <Navbar/>

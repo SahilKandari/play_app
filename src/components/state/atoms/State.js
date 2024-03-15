@@ -10,10 +10,10 @@ export const authState = atom({
   default: false
 });
 
-// export const userState = atom({
-//   key: "user",
-//   default: {}
-// });
+export const userState = atom({
+  key: "user",
+  default: {}
+});
 
 export const searchedVideos = atom({
   key: "searchedVideos",

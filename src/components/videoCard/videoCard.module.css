@@ -1,7 +1,12 @@
 .card {
-  width: 270px;
-  height: 250px;
+  width: 302px;
+  height: 266px;
   cursor: pointer;
+  padding: 1rem;
+  border-radius: 6px;
+}
+.card:hover {
+  background-color: rgb(37, 37, 37);
 }
 
 .thumb {
